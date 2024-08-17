@@ -9,7 +9,7 @@ export const StyledMain = styled.main`
   /* height: 100vh; */
 
   & > h1 {
-    font-size: clamp(1.5rem, 3vw, 4rem);
+    font-size: clamp(0.5rem, 1vw + 0.8rem, 4rem);
     font-weight: 500;
     position: relative;
     /* outline: 2px solid red; */

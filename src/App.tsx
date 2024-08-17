@@ -29,7 +29,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-        <Layout themeSwitch={toggleTheme}>
+        <Layout themeSwitch={toggleTheme} theme={theme}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/playground" element={<Playground />} />
@@ -41,3 +41,5 @@ function App() {
 }
 
 export default App;
+
+// contact form - bubbling section - Intro - Tech - experiences
