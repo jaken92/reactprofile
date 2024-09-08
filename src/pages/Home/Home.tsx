@@ -4,8 +4,12 @@ import bigSliderImg from "../../assets/images/techsliderLightBig.png";
 import { BubbleSection } from "../../components/BubbleSection";
 import yrgoImg from "../../assets/images/yrgo2.png";
 import ericssonImg from "../../assets/images/ericsson2.png";
+import { FancyButton } from "../../components/FancyButton";
 
 export const StyledMain = styled.main`
+  & * {
+    z-index: 2;
+  }
   & > .sectionOne {
     display: flex;
     align-items: center;
@@ -114,77 +118,6 @@ export const StyledMain = styled.main`
     }
   }
 
-  & > .sectionThree {
-    min-height: 100vh;
-  }
-
-  & > .sectionFour {
-    /* border-top: 1px solid ${(props) => props.theme.aqua}; */
-    min-height: 100vh;
-
-    padding: 3rem;
-
-    & > h2 {
-      text-align: center;
-      background-color: ${(props) => props.theme.aqua};
-      color: ${(props) => props.theme.black};
-      width: max-content;
-      margin: 0 auto;
-      padding: 0.5rem;
-      border-radius: 5px;
-      font-size: 3rem;
-    }
-
-    & > .experiencesContainer {
-      /* border: 1px solid ${(props) => props.theme.aqua}; */
-      /* background-color: ${(props) => props.theme.gray}; */
-      margin: 5rem auto;
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-
-      & > .experienceCard {
-        width: 25rem;
-        height: 35rem;
-        background-color: ${(props) => props.theme.gray};
-        border-radius: 20px;
-        /* border: 5px solid ${(props) => props.theme.aqua}; */
-        padding: 0.8rem;
-
-        & > fieldset {
-          border: 1px solid ${(props) => props.theme.aqua};
-          border-radius: 5px;
-          height: 100%;
-
-          & > legend {
-            padding: 0px 6px;
-            color: ${(props) => props.theme.aqua};
-          }
-
-          & > img {
-            width: 100%;
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
-            border-radius: 5px;
-            height: 160px;
-            object-fit: cover;
-          }
-
-          & > span {
-            border-bottom: 1px solid ${(props) => props.theme.aqua};
-            width: 100%;
-            display: block;
-            margin: 8px 0;
-          }
-
-          & > p {
-            font-size: 14px;
-          }
-        }
-      }
-    }
-  }
-
   & > .footer {
     border-top: 1px solid ${(props) => props.theme.aqua};
     min-height: 30vh;
@@ -219,6 +152,102 @@ export const StyledMain = styled.main`
   }
 `;
 
+const StyledSectionThree = styled.section`
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  & > div {
+    max-width: 40rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & > h2 {
+      position: relative;
+      font-size: 36px;
+    }
+
+    & > h2::before {
+      content: "";
+      position: absolute;
+      left: -30px;
+      top: 50%;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      background-color: ${(props) => props.theme.aqua};
+      transform: translateY(-50%);
+    }
+  }
+`;
+
+const StyledSectionFour = styled.section`
+  min-height: 100vh;
+  & > h2 {
+    text-align: center;
+    background-color: ${(props) => props.theme.aqua};
+    color: ${(props) => props.theme.black};
+    width: max-content;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 3rem;
+  }
+
+  & > .experiencesContainer {
+    /* border: 1px solid ${(props) => props.theme.aqua}; */
+    /* background-color: ${(props) => props.theme.gray}; */
+    margin: 5rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+
+    & > .experienceCard {
+      width: 25rem;
+      height: 35rem;
+      background-color: ${(props) => props.theme.gray};
+      border-radius: 20px;
+      /* border: 5px solid ${(props) => props.theme.aqua}; */
+      padding: 0.8rem;
+
+      & > fieldset {
+        border: 1px solid ${(props) => props.theme.aqua};
+        border-radius: 5px;
+        height: 100%;
+
+        & > legend {
+          padding: 0px 6px;
+          color: ${(props) => props.theme.aqua};
+        }
+
+        & > img {
+          width: 100%;
+          -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+          border-radius: 5px;
+          height: 160px;
+          object-fit: cover;
+        }
+
+        & > span {
+          border-bottom: 1px solid ${(props) => props.theme.aqua};
+          width: 100%;
+          display: block;
+          margin: 8px 0;
+        }
+
+        & > p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+`;
 export const Home = () => {
   return (
     <StyledMain>
@@ -237,51 +266,63 @@ export const Home = () => {
           <div className="slider"></div>
         </div>
       </section>
-      <BubbleSection></BubbleSection>
-      {/* <section className="sectionThree">
-        
-      </section> */}
-      {/* <section className="sectionFour">
-        <h2>Experience</h2>
-        <div className="experiencesContainer">
-          <div className="experienceCard">
-            <fieldset>
-              <legend>YRGO</legend>
-              <img src={yrgoImg} alt="" />
-              <h3>Yrgo Web Development</h3>
-              <h4>Type: Education</h4>
-              <h4>Duration: 2022/08 - 2024-06</h4>
-              <span></span>
-              <p>
-                Program directed towards becoming a fullstack developer. Working
-                in teambased environment with other developers and digital
-                designers to create web applications. Using tech such as SQLite,
-                PHP, Laravel, React, Typescript, Supabase, nextJS, Wordpress and
-                Hydrogen. The program concluded with 6-months of hands on
-                practics at a company within the industry.
-              </p>
-            </fieldset>
+      <BubbleSection>
+        <StyledSectionThree>
+          <div>
+            <h2>My name is Petter Jakobsson.</h2>
+            <p>
+              I am a webdeveloper based in Gothenburg, Sweden. I do fullstack
+              development and have a experience with many languages and
+              frameworks. My strongest skillset lies in Javascript and
+              frameworks such as React and NodeJS.
+            </p>
+            <div>
+              <FancyButton></FancyButton>
+            </div>
           </div>
-          <div className="experienceCard">
-            <fieldset>
-              <legend>ERICSSON</legend>
-              <img src={ericssonImg} alt="" />
-              <h3>Ericsson</h3>
-              <h4>Type: Internship/Work</h4>
-              <h4>Duration: 2023/11 - Present</h4>
-              <span></span>
-              <p>
-                Program directed towards becoming a fullstack developer. Working
-                in teambased environment with other developers and digital
-                designers to create web applications. Using tech such as SQLite,
-                PHP, Laravel, React, Typescript, Supabase, nextJS, Wordpress and
-                Hydrogen. The program concluded with 6-months of hands on
-                practics at a company within the industry.
-              </p>
-            </fieldset>
+        </StyledSectionThree>
+        <StyledSectionFour>
+          <h2>Experience</h2>
+          <div className="experiencesContainer">
+            <div className="experienceCard">
+              <fieldset>
+                <legend>YRGO</legend>
+                <img src={yrgoImg} alt="" />
+                <h3>Yrgo Web Development</h3>
+                <h4>Type: Education</h4>
+                <h4>Duration: 2022/08 - 2024-06</h4>
+                <span></span>
+                <p>
+                  Program directed towards becoming a fullstack developer.
+                  Working in teambased environment with other developers and
+                  digital designers to create web applications. Using tech such
+                  as SQLite, PHP, Laravel, React, Typescript, Supabase, nextJS,
+                  Wordpress and Hydrogen. The program concluded with 6-months of
+                  hands on practics at a company within the industry.
+                </p>
+              </fieldset>
+            </div>
+            <div className="experienceCard">
+              <fieldset>
+                <legend>ERICSSON</legend>
+                <img src={ericssonImg} alt="" />
+                <h3>Ericsson</h3>
+                <h4>Type: Internship/Work</h4>
+                <h4>Duration: 2023/11 - Present</h4>
+                <span></span>
+                <p>
+                  Program directed towards becoming a fullstack developer.
+                  Working in teambased environment with other developers and
+                  digital designers to create web applications. Using tech such
+                  as SQLite, PHP, Laravel, React, Typescript, Supabase, nextJS,
+                  Wordpress and Hydrogen. The program concluded with 6-months of
+                  hands on practics at a company within the industry.
+                </p>
+              </fieldset>
+            </div>
           </div>
-        </div>
-      </section> */}
+        </StyledSectionFour>
+      </BubbleSection>
       <div className="footer"></div>
     </StyledMain>
   );
