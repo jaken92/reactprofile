@@ -8,8 +8,8 @@ export const StyledToggleButton = styled.div`
 
   & > button {
     background-color: linear-gradient(145deg, #ffffff, #e6e6e6);
-    width: 50px;
-    height: 30px;
+    width: 40px;
+    height: 25px;
     border-radius: 50px;
     border: 2px solid black;
     position: relative;
@@ -26,8 +26,8 @@ export const StyledToggleButton = styled.div`
     top: 50%;
     transform: translateY(-50%);
     left: 5%;
-    height: 22px;
-    width: 22px;
+    height: 17px;
+    width: 17px;
     border-radius: 50%;
     background-color: darkgray;
     transition: left 0.2s ease;
@@ -36,6 +36,10 @@ export const StyledToggleButton = styled.div`
   }
 
   & > .toggled::after {
-    left: calc(95% - 22px);
+    left: calc(95% - 17px);
+  }
+
+  @media screen and (max-width: 800px) {
+    scale: 0.8;
   }
 `;

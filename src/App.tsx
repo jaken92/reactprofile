@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./theme/theme";
 import { Layout } from "./components/Layout/Layout";
@@ -8,13 +7,13 @@ import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
 import { Playground } from "./pages/Playground/Playground";
 
-type Theme = "light" | "dark";
+type ThemeColor = "light" | "dark";
 
 function App() {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<ThemeColor>("light");
 
   useEffect(() => {
-    const lsTheme = localStorage.getItem("theme") as Theme | null;
+    const lsTheme = localStorage.getItem("theme") as ThemeColor | null;
     if (lsTheme) {
       setTheme(lsTheme);
     }
@@ -26,6 +25,7 @@ function App() {
     localStorage.setItem("theme", changeTheme);
   };
 
+  console.log(typeof theme);
   return (
     <>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>

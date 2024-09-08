@@ -12,8 +12,8 @@ export const ThemeToggler: React.FC<ToggleButtonProps> = ({
   return (
     <StyledToggleButton>
       <svg
-        width="20px"
-        height="20px"
+        width="15px"
+        height="15px"
         viewBox="0 0 36 36"
         xmlns="http://www.w3.org/2000/svg">
         <g id="Lager_93" data-name="Lager 93" transform="translate(2 2)">
@@ -129,8 +129,8 @@ export const ThemeToggler: React.FC<ToggleButtonProps> = ({
       />
 
       <svg
-        width="20px"
-        height="20px"
+        width="15px"
+        height="15px"
         viewBox="0 0 32 32"
         xmlns="http://www.w3.org/2000/svg">
         <g id="Lager_94" data-name="Lager 94" transform="translate(0)">
