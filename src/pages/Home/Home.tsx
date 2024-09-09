@@ -171,8 +171,6 @@ export const StyledMain = styled.main`
 `;
 
 const StyledSectionThree = styled.section`
-  min-height: 100vh;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -180,14 +178,15 @@ const StyledSectionThree = styled.section`
   min-height: 100vh;
 
   & > div {
-    max-width: 40rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 60%;
 
     & > h2 {
       position: relative;
-      font-size: 36px;
+      font-size: clamp(1.5rem, 2vw + 1rem, 4rem);
+      line-height: 1.2;
     }
 
     & > h2::before {
@@ -200,6 +199,10 @@ const StyledSectionThree = styled.section`
       border-radius: 50%;
       background-color: ${(props) => props.theme.aqua};
       transform: translateY(-50%);
+    }
+
+    & > p {
+      font-size: clamp(1rem, 1.5vw, 20px);
     }
   }
 `;
@@ -218,19 +221,18 @@ const StyledSectionFour = styled.section`
   }
 
   & > .experiencesContainer {
-    /* border: 1px solid ${(props) => props.theme.aqua}; */
-    /* background-color: ${(props) => props.theme.gray}; */
-    margin: 5rem auto;
+    margin: 3rem auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 3rem;
+    padding: 0rem 2rem;
 
     & > .experienceCard {
-      width: 25rem;
-      height: 35rem;
+      max-width: 22rem;
+      /* height: 32rem; */
       background-color: ${(props) => props.theme.gray};
       border-radius: 20px;
-      /* border: 5px solid ${(props) => props.theme.aqua}; */
       padding: 0.8rem;
 
       & > fieldset {
@@ -265,6 +267,12 @@ const StyledSectionFour = styled.section`
       }
     }
   }
+
+  @media only screen and (max-width: 390px) {
+    & > .experiencesContainer > .experienceCard > fieldset > p {
+      font-size: 12px;
+    }
+  }
 `;
 export const Home = () => {
   return (
@@ -275,7 +283,7 @@ export const Home = () => {
         </h1>
         {/* <h2 className="twText">My name is Petter Jakobsson.</h2> */}
         <h2 className="twText">
-          I am a web developer based in Gothenburgh, Sweden.
+          I am a web developer based in Gothenburg, Sweden.
         </h2>
         {/* <h3>I am a web developer based in Gothenburgh, Sweden.</h3> */}
       </section>
@@ -290,9 +298,11 @@ export const Home = () => {
             <h2>My name is Petter Jakobsson.</h2>
             <p>
               I am a webdeveloper based in Gothenburg, Sweden. I do fullstack
-              development and have a experience with many languages and
+              development and have a experience with various languages and
               frameworks. My strongest skillset lies in Javascript and
-              frameworks such as React and NodeJS.
+              frameworks such as React and NodeJS. Currently working in an
+              automation team at Ericsson, develop web applications for internal
+              use.
             </p>
             <div>
               <FancyButton></FancyButton>

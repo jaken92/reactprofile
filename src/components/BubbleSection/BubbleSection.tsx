@@ -6,7 +6,6 @@ const StyledBubbleSection = styled.section`
   position: relative;
   overflow: hidden;
   font-family: system-ui, sans-serif;
-  /* z-index: 1; */
 
   & > .contentWrapper {
     z-index: 200 !important;
@@ -134,8 +133,8 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
     return renderedBubbles;
   };
 
-  const renderedTopBubbles = BubbleMaker("left", "top");
-  const renderedBottomBubbles = BubbleMaker("right", "bottom");
+  const renderedTopBubbles = BubbleMaker("right", "top");
+  const renderedBottomBubbles = BubbleMaker("left", "bottom");
   return (
     <StyledBubbleSection>
       {renderedTopBubbles}

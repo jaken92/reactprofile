@@ -50,7 +50,7 @@ export const StyledHeader = styled.header`
         content: "";
         position: absolute;
         width: 100%;
-        background-color: ${(props) => props.theme.white};
+        background-color: ${(props) => props.theme.aqua};
         height: 3px;
         width: 0%;
         top: -3px;
@@ -62,7 +62,7 @@ export const StyledHeader = styled.header`
         content: "";
         position: absolute;
         width: 100%;
-        background-color: ${(props) => props.theme.white};
+        background-color: ${(props) => props.theme.aqua};
         height: 3px;
         width: 0%;
         bottom: -3px;
