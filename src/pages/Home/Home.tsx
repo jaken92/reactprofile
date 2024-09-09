@@ -119,8 +119,26 @@ export const StyledMain = styled.main`
   }
 
   & > .footer {
-    border-top: 1px solid ${(props) => props.theme.aqua};
+    border-top: 1px solid ${(props) => props.theme.gray};
+    display: grid;
     min-height: 30vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    align-content: center;
+
+    & > a {
+      font-weight: 600;
+      text-transform: uppercase;
+      justify-self: center;
+      align-self: center;
+      text-decoration: none;
+      color: ${(props) => props.theme.white};
+      position: relative;
+    }
+
+    & > a:hover {
+      color: hsl(0, 0%, 97%);
+    }
   }
 
   //* Media Queryies *//
@@ -323,7 +341,11 @@ export const Home = () => {
           </div>
         </StyledSectionFour>
       </BubbleSection>
-      <div className="footer"></div>
+      <div className="footer">
+        <a href="">Github</a>
+        <a href="">Linked-in</a>
+        <a href="">Blog</a>
+      </div>
     </StyledMain>
   );
 };

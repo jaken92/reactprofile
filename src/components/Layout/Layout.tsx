@@ -13,7 +13,8 @@ type LayoutProps = {
 
 export const StyledHeader = styled.header`
   width: 100%;
-  background-color: transparent;
+  background-color: ${(props) => props.theme.black};
+  color: ${(props) => props.theme.white};
   justify-content: space-between;
   align-items: center;
   display: flex;
@@ -24,7 +25,7 @@ export const StyledHeader = styled.header`
   top: 0px;
   left: 0px;
   z-index: 99;
-  /* border-bottom: 1px solid ${(props) => props.theme.white}; */
+  border-bottom: 1px solid ${(props) => props.theme.gray};
 
   & > nav {
     display: flex;
@@ -42,6 +43,7 @@ export const StyledHeader = styled.header`
         text-decoration: none;
         color: ${(props) => props.theme.white};
         position: relative;
+        font-weight: 600;
       }
 
       & > a::before {
