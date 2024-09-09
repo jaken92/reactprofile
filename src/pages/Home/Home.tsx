@@ -121,7 +121,7 @@ export const StyledMain = styled.main`
   & > .footer {
     border-top: 1px solid ${(props) => props.theme.gray};
     display: grid;
-    min-height: 30vh;
+    min-height: 20vh;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: minmax(100px, auto);
     align-content: center;
