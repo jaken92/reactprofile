@@ -7,17 +7,17 @@ export const lightTheme: DefaultTheme = {
 
   text: "hsla(0, 0%, 4%, 1)",
   filter: "none",
-  black: "hsla(30, 29%, 95%, 1)",
+
+  black: "hsl(43, 46%, 87%)",
+  white: "hsl(213, 14%, 13%, 1)", // text black
+  aqua: "hsla(80, 45%, 29%, 1)", // lightbrown
+  gray: "hsla(80, 45%, 29%, 1)",
+  hover: "hsl(213, 14%, 53%, 1)",
   isDark: false,
 };
 
-// export const darkTheme: DefaultTheme = {
-//   primary: "hsla(231, 8%, 30%, 1)",
-//   secondary: "hsla(0, 0%, 26%, 1)",
-//   accent: "hsla(33, 17%, 59%, 1)",
-//   text: "hsla(0, 0%, 96%, 1)",
-//   filter: "grayscale(100%)",
-// };
+//green: "hsla(80, 45%, 29%, 1)",
+//brown "hsl(33, 46%, 47%)",
 
 export const darkTheme: DefaultTheme = {
   primary: "hsl(222, 36%, 5%)",
@@ -32,6 +32,7 @@ export const darkTheme: DefaultTheme = {
   white: "hsl(0, 0%, 87%)",
   aqua: "hsla(172, 100%, 50%, 1)",
   gray: "hsl(213, 14%, 13%, 1)",
+  hover: "hsl(0, 0%, 97%)",
   isDark: true,
 };
 

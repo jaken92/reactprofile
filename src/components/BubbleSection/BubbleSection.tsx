@@ -41,6 +41,7 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
     color: string;
     insetY: number;
     insetX: number;
+    opacity: number;
   }
 
   const bubbles: Bubbles[] = [
@@ -49,55 +50,64 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
       color: theme.aqua,
       insetX: -4,
       insetY: 11,
+      opacity: 1,
     },
     {
       size: 15,
       color: theme.aqua,
       insetX: 11,
       insetY: 10,
+      opacity: 0.7,
     },
     {
       size: 16,
-      color: theme.text,
+      color: theme.aqua, //2nd
       insetX: 3,
       insetY: 15,
+      opacity: 0.5,
     },
     {
       size: 18,
       color: theme.aqua,
       insetX: 15,
       insetY: -6,
+      opacity: 0.3,
     },
     {
       size: 8,
-      color: theme.text,
+      color: theme.aqua, //2nd
       insetX: 12,
       insetY: 7,
+      opacity: 0.8,
     },
     {
       size: 11,
-      color: theme.text,
+      color: theme.aqua, //2nd
       insetX: 8,
       insetY: -3,
+      opacity: 0.5,
     },
     {
       size: 2,
       color: theme.aqua,
       insetX: 2.5,
       insetY: 29,
+      opacity: 0.4,
     },
 
     {
       size: 17,
-      color: theme.text,
+      color: theme.aqua, //2nd
       insetX: 0.1,
       insetY: 0.1,
+      opacity: 0.3,
     },
     {
       size: 15,
       color: theme.aqua,
       insetX: -5,
       insetY: -7,
+      opacity: 0.2,
     },
   ];
 
@@ -114,11 +124,11 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
         width:
           (windowWidth > 800 ? bubble.size * 0.8 : bubble.size * 0.5) + "rem",
         position: "absolute",
-        // backgroundColor: bubble.color,
+        backgroundColor: theme.isDark ? "transparent" : bubble.color,
         borderRadius: "50%",
-        opacity: "1",
+        opacity: theme.isDark ? "1" : bubble.opacity,
         animation: `pulsate 10s ease-in-out ${animationDelay}s infinite`,
-        border: `2px solid ${theme.aqua}`,
+        border: theme.isDark ? `2px solid ${theme.aqua}` : "none",
         // zIndex: "1",
       };
 

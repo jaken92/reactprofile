@@ -67,15 +67,15 @@ export const StyledMain = styled.main`
       }
 
       &::before {
-        background-color: ${(props) => props.theme.primary};
-        animation: typewriter 5.5s steps(50) 1s forwards;
+        background-color: ${(props) => props.theme.black};
+        animation: typewriter 5.5s steps(49) 1s forwards;
       }
 
       &::after {
         width: 0.08em;
         background-color: ${(props) => props.theme.white};
-        animation: typewriter 5.5s steps(50) 1s forwards,
-          blink 750ms steps(50) infinite;
+        animation: typewriter 5.5s steps(49) 1s forwards,
+          blink 750ms steps(49) infinite;
       }
 
       @keyframes typewriter {
@@ -100,6 +100,8 @@ export const StyledMain = styled.main`
       width: 100%;
       border-bottom: 1px solid ${(props) => props.theme.aqua};
       border-top: 1px solid ${(props) => props.theme.aqua};
+      /* background-color: ${(props) =>
+        props.theme.isDark ? props.theme.black : props.theme.aqua}; */
 
       & > .slider {
         background: url(${bigSliderImg}) repeat-x;
@@ -137,7 +139,7 @@ export const StyledMain = styled.main`
     }
 
     & > a:hover {
-      color: hsl(0, 0%, 97%);
+      color: ${(props) => props.theme.hover};
     }
   }
 
@@ -230,10 +232,14 @@ const StyledSectionFour = styled.section`
 
     & > .experienceCard {
       max-width: 22rem;
-      /* height: 32rem; */
-      background-color: ${(props) => props.theme.gray};
+      background-color: ${(props) =>
+        props.theme.isDark ? props.theme.gray : props.theme.black};
       border-radius: 20px;
       padding: 0.8rem;
+      box-shadow: ${(props) =>
+        props.theme.isDark
+          ? "none"
+          : "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"};
 
       & > fieldset {
         border: 1px solid ${(props) => props.theme.aqua};
