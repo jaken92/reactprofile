@@ -9,7 +9,7 @@ export const lightTheme: DefaultTheme = {
   filter: "none",
 
   black: "hsl(43, 46%, 87%)",
-  white: "hsl(213, 14%, 13%, 1)", // text black
+  white: "#544d43", // text black
   aqua: "hsla(80, 45%, 29%, 1)", // lightbrown
   gray: "hsla(80, 45%, 29%, 1)",
   hover: "hsl(213, 14%, 53%, 1)",

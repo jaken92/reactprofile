@@ -27,6 +27,78 @@ export const StyledHeader = styled.header`
   z-index: 99;
   border-bottom: 1px solid ${(props) => props.theme.gray};
 
+  .logo {
+    height: 30px;
+    width: 30px;
+    background-color: ${(props) => props.theme.black};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: ${(props) => props.theme.aqua};
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 24px;
+    border: 1px solid ${(props) => props.theme.aqua};
+    position: relative;
+
+    text-decoration: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border: 1px solid ${(props) => props.theme.aqua};
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      border: 1px solid ${(props) => props.theme.aqua};
+    }
+
+    & > P {
+      position: relative;
+    }
+    & > p::after {
+      content: "";
+      position: absolute;
+      top: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+
+      height: 15px;
+      width: 10px;
+      background-color: ${(props) => props.theme.black};
+    }
+
+    & > p::before {
+      content: "";
+      position: absolute;
+      bottom: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+
+      height: 15px;
+      width: 10px;
+      background-color: ${(props) => props.theme.black};
+    }
+  }
+
   & > nav {
     display: flex;
     justify-content: space-between;
@@ -191,7 +263,8 @@ export const Layout: React.FC<LayoutProps> = ({
     <StyledLayout>
       <StyledHeader>
         <NavLink onClick={handleLinkClick} to="/" className="logo">
-          <img src={Logo} alt="p-logo" style={{ height: "32px" }} />
+          {/* <img src={Logo} alt="p-logo" style={{ height: "32px" }} /> */}
+          <p>P</p>
         </NavLink>
         <nav>
           <ThemeToggler theme={theme} themeSwitch={themeSwitch} />

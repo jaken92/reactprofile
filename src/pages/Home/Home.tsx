@@ -177,7 +177,7 @@ const StyledSectionThree = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 95vh;
 
   & > div {
     display: flex;
@@ -187,7 +187,7 @@ const StyledSectionThree = styled.section`
 
     & > h2 {
       position: relative;
-      font-size: clamp(1.5rem, 2vw + 1rem, 4rem);
+      font-size: clamp(1.5rem, 3vw + 0.5rem, 5rem);
       line-height: 1.2;
     }
 
@@ -204,7 +204,7 @@ const StyledSectionThree = styled.section`
     }
 
     & > p {
-      font-size: clamp(1rem, 1.5vw, 20px);
+      font-size: clamp(1rem, 1.5vw, 2rem);
     }
   }
 `;
@@ -219,7 +219,7 @@ const StyledSectionFour = styled.section`
     margin: 0 auto;
     padding: 0.5rem;
     border-radius: 5px;
-    font-size: 3rem;
+    font-size: clamp(3rem, 5vw, 8rem);
   }
 
   & > .experiencesContainer {
@@ -227,11 +227,11 @@ const StyledSectionFour = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 3rem;
+    gap: 5rem;
     padding: 0rem 2rem;
 
     & > .experienceCard {
-      max-width: 22rem;
+      width: 22rem;
       background-color: ${(props) =>
         props.theme.isDark ? props.theme.gray : props.theme.black};
       border-radius: 20px;
@@ -278,6 +278,39 @@ const StyledSectionFour = styled.section`
     & > .experiencesContainer > .experienceCard > fieldset > p {
       font-size: 12px;
     }
+  }
+
+  @media only screen and (min-width: 1600px) {
+    & > .experiencesContainer {
+      gap: 8rem;
+      & > .experienceCard {
+        width: 32rem;
+
+        & > fieldset {
+          & > legend {
+            font-size: 22px;
+          }
+
+          & > img {
+            height: 200px;
+          }
+
+          & > h3 {
+            font-size: 32px;
+          }
+          & > h4 {
+            font-size: 28px;
+          }
+
+          & > p {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    /* & > .experiencesContainer > .experienceCard > fieldset > p {
+      font-size: 20px;
+    } */
   }
 `;
 export const Home = () => {

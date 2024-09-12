@@ -11,7 +11,8 @@ export const StyledToggleButton = styled.div`
     width: 40px;
     height: 25px;
     border-radius: 50px;
-    border: 2px solid black;
+    border: 2px solid
+      ${(props) => (props.theme.isDark ? "black" : props.theme.white)};
     position: relative;
     box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
