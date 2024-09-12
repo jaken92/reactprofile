@@ -219,7 +219,7 @@ const StyledSectionFour = styled.section`
     margin: 0 auto;
     padding: 0.5rem;
     border-radius: 5px;
-    font-size: clamp(3rem, 5vw, 8rem);
+    font-size: clamp(3rem, 4vw, 8rem);
   }
 
   & > .experiencesContainer {
