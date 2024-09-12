@@ -3,7 +3,6 @@ import { StyledLayout } from "./Layout.styles";
 import { NavLink } from "react-router-dom";
 import { ThemeToggler } from "../ThemeToggler";
 import styled from "styled-components";
-import Logo from "../../assets/images/logo.png";
 
 type LayoutProps = {
   children: ReactNode;
