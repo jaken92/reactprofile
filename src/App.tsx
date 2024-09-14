@@ -6,6 +6,7 @@ import { Layout } from "./components/Layout/Layout";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
 import { Playground } from "./pages/Playground/Playground";
+import { Contact } from "./pages";
 
 type ThemeColor = "light" | "dark";
 
@@ -33,6 +34,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/playground" element={<Playground />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </Layout>
       </ThemeProvider>

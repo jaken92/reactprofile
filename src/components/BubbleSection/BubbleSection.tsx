@@ -48,7 +48,7 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
     {
       size: 1,
       color: theme.aqua,
-      insetX: 9,
+      insetX: 7,
       insetY: 83,
       opacity: 0.6,
     },
@@ -168,9 +168,9 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
       };
 
       styling[sideX] =
-        (windowWidth > 800 ? bubble.insetX : bubble.insetX * 0.5) + "rem";
+        (windowWidth > 850 ? bubble.insetX : bubble.insetX * 0.5) + "rem";
       styling[sideY] =
-        (windowWidth > 800 ? bubble.insetY : bubble.insetY * 0.5) + "rem";
+        (windowWidth > 850 ? bubble.insetY : bubble.insetY * 0.5) + "rem";
 
       return <div style={styling}></div>;
     });
