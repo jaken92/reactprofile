@@ -20,7 +20,7 @@ export const StyledMain = styled.main`
 
     & > h1 {
       color: ${(props) => props.theme.white};
-      font-size: 3.75rem;
+      font-size: clamp(3rem, 4vw + 1rem, 6rem);
       text-align: center;
       line-height: normal;
 
@@ -30,7 +30,7 @@ export const StyledMain = styled.main`
       }
     }
 
-    & > h3 {
+    /* & > h3 {
       font-size: 2.5rem;
       background-image: linear-gradient(90deg, #00ff5e, #00ff8c);
       color: gray;
@@ -46,7 +46,7 @@ export const StyledMain = styled.main`
           color: transparent;
         }
       }
-    }
+    } */
 
     & > .twText {
       margin-top: 2rem;
@@ -178,6 +178,7 @@ const StyledSectionThree = styled.section`
   justify-content: center;
   align-items: center;
   min-height: 95vh;
+  /* margin: 10rem 0; */
 
   & > div {
     display: flex;
@@ -187,7 +188,7 @@ const StyledSectionThree = styled.section`
 
     & > h2 {
       position: relative;
-      font-size: clamp(1.5rem, 3vw + 0.5rem, 5rem);
+      font-size: clamp(1.5rem, 2vw + 0.5rem, 4rem);
       line-height: 1.2;
     }
 
@@ -207,11 +208,18 @@ const StyledSectionThree = styled.section`
       font-size: clamp(1rem, 1.5vw, 2rem);
     }
   }
+
+  @media only screen and (max-width: 750px) {
+    min-height: 80vh;
+  }
 `;
 
 const StyledSectionFour = styled.section`
   min-height: 100vh;
+
   & > h2 {
+    z-index: 4;
+    position: relative;
     text-align: center;
     background-color: ${(props) => props.theme.aqua};
     color: ${(props) => props.theme.black};
@@ -219,7 +227,7 @@ const StyledSectionFour = styled.section`
     margin: 0 auto;
     padding: 0.5rem;
     border-radius: 5px;
-    font-size: clamp(3rem, 4vw, 8rem);
+    font-size: clamp(3rem, 4vw, 5rem);
   }
 
   & > .experiencesContainer {
@@ -227,7 +235,7 @@ const StyledSectionFour = styled.section`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5rem;
+    gap: 6rem;
     padding: 0rem 2rem;
 
     & > .experienceCard {
@@ -274,13 +282,16 @@ const StyledSectionFour = styled.section`
     }
   }
 
-  @media only screen and (max-width: 390px) {
+  @media only screen and (max-width: 750px) {
+    & > .experiencesContainer {
+      gap: 3rem;
+    }
     & > .experiencesContainer > .experienceCard > fieldset > p {
       font-size: 12px;
     }
   }
 
-  @media only screen and (min-width: 1600px) {
+  @media only screen and (min-width: 1750px) {
     & > .experiencesContainer {
       gap: 8rem;
       & > .experienceCard {
@@ -321,9 +332,7 @@ export const Home = () => {
           Welcome to my <br /> <span>website!</span>
         </h1>
         {/* <h2 className="twText">My name is Petter Jakobsson.</h2> */}
-        <h2 className="twText">
-          I am a web developer based in Gothenburg, Sweden.
-        </h2>
+        <h2 className="twText">I am a developer based in Gothenburg.</h2>
         {/* <h3>I am a web developer based in Gothenburgh, Sweden.</h3> */}
       </section>
       <section className="sectionTwo">

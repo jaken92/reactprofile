@@ -46,6 +46,41 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
 
   const bubbles: Bubbles[] = [
     {
+      size: 1,
+      color: theme.aqua,
+      insetX: 9,
+      insetY: 83,
+      opacity: 0.6,
+    },
+    {
+      size: 3,
+      color: theme.aqua,
+      insetX: 5,
+      insetY: 84,
+      opacity: 0.6,
+    },
+    {
+      size: 7,
+      color: theme.aqua,
+      insetX: 2,
+      insetY: 78,
+      opacity: 0.6,
+    },
+    {
+      size: 12,
+      color: theme.aqua,
+      insetX: -6,
+      insetY: 77,
+      opacity: 0.6,
+    },
+    {
+      size: 10,
+      color: theme.aqua,
+      insetX: -1,
+      insetY: 72,
+      opacity: 0.6,
+    },
+    {
       size: 12,
       color: theme.aqua,
       insetX: -4,
