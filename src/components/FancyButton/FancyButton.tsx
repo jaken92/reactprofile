@@ -21,6 +21,10 @@ const StyledFancyButton = styled.button<FancyButtonProps>(
     &:active {
       scale: 0.9;
     }
+
+    @media only screen and (min-width: 1750px) {
+      font-size: 24px;
+    }
   `
 );
 

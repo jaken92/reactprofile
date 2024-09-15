@@ -164,7 +164,7 @@ const StyledSectionThree = styled.section(
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 95vh;
+    padding: 12rem 0rem;
 
     & > div {
       display: flex;
@@ -202,7 +202,12 @@ const StyledSectionThree = styled.section(
     }
 
     @media only screen and (max-width: 750px) {
-      min-height: 80vh;
+      /* min-height: 80vh; */
+      padding: 8rem 0rem;
+    }
+
+    @media only screen and (min-width: 1750px) {
+      padding: 15rem 0rem;
     }
   `
 );
@@ -378,7 +383,7 @@ export const Home = () => {
               automation team at Ericsson, where we develop web applications
               that help streamline workflows and improve productivity.
               <br />
-              Outside of technology, i love spending time with my girlfriend and
+              Outside of technology, i like to spend time with my girlfriend and
               my dog, taking walks in the nature and exploring new places.
             </p>
             <div>
