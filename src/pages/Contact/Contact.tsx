@@ -19,7 +19,7 @@ const infoCardData: InfoCardData = {
   title: "Contact",
   secondTitle: "Phone: +46 735-876724",
   thirdTitle: "Mail: petterjakobsson9206@gmail.com",
-  text: "Curious to talk to you regardless of who you are, potential employer, future customer or just a fellow code enthusiast. I am currently looking for work remote or in Gothenburg.",
+  text: "Feel free to reach out, whether you're a potential employer, future client, or fellow developer. I'm currently open to remote opportunities or roles based in Gothenburg.",
 };
 
 export const Contact = () => {
