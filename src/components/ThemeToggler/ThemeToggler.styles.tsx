@@ -12,7 +12,7 @@ export const StyledToggleButton = styled.div`
     height: 25px;
     border-radius: 50px;
     border: 2px solid
-      ${(props) => (props.theme.isDark ? "black" : props.theme.white)};
+      ${(props) => (props.theme.isDark ? "black" : props.theme.text)};
     position: relative;
     box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2);
   }

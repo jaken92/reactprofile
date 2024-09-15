@@ -8,6 +8,6 @@ declare module "styled-components" {
     secondary: string;
     accent: string;
     text: string;
-    filter: string;
+    isDark: boolean;
   }
 }

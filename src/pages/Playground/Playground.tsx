@@ -1,3 +1,6 @@
+//todo: create playground
+// not in use.
+
 import styled from "styled-components";
 import { BubbleSection } from "../../components/BubbleSection";
 import pj from "../../assets/images/pj.png";

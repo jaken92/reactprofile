@@ -9,7 +9,6 @@ export const ThemeToggler: React.FC<ToggleButtonProps> = ({
   theme,
   themeSwitch,
 }) => {
-  // const theme = useTheme();
   return (
     <StyledToggleButton>
       <svg

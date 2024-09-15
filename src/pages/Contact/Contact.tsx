@@ -1,17 +1,6 @@
-import styled from "styled-components";
 import { BubbleSection, InfoCard, InfoCardData } from "../../components";
 import pjImg from "../../assets/images/pj2.png";
-
-const StyledContactPage = styled.section`
-  min-height: calc(100vh - 63px); // - header height
-  margin-top: 63px; // headerHeight
-  z-index: 4;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0rem 2rem;
-`;
+import { StyledContactPage } from "./Contact.styles";
 
 const infoCardData: InfoCardData = {
   legend: "Petter Jakobsson",

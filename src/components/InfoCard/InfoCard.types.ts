@@ -11,3 +11,7 @@ export interface InfoCardProps {
   cardContent: InfoCardData;
   large?: boolean;
 }
+
+export interface StyledInfoCardProps {
+  large?: boolean;
+}
