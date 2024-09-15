@@ -6,6 +6,7 @@ import yrgoImg from "../../assets/images/yrgo2.png";
 import ericssonImg from "../../assets/images/ericsson2.png";
 import { FancyButton } from "../../components/FancyButton";
 import { InfoCard, InfoCardData } from "../../components/InfoCard";
+import { Link } from "react-router-dom";
 
 export const StyledMain = styled.main(
   ({ theme }) => css`
@@ -192,6 +193,11 @@ const StyledSectionThree = styled.section(
       & > p {
         font-size: clamp(1rem, 1.5vw, 2rem);
       }
+
+      & > div {
+        display: flex;
+        gap: 1rem;
+      }
     }
 
     @media only screen and (max-width: 750px) {
@@ -318,26 +324,26 @@ const StyledSectionFour = styled.section(
   `
 );
 
-export const Home = () => {
-  const infoCards: InfoCardData[] = [
-    {
-      legend: "Yrgo",
-      img: yrgoImg,
-      title: "Yrgo Web Development",
-      secondTitle: "Type: Education",
-      thirdTitle: "Duration: 2022/08 - 2024-06",
-      text: "Program directed towards becoming a fullstack developer. Working in teambased environment with other developers and digital designers to create web applications. Using tech such as SQLite, PHP, Laravel, React, Typescript, Supabase, nextJS, Wordpress and Hydrogen. The program concluded with 6-months of hands on practics at a company within the industry.",
-    },
-    {
-      legend: "Ericsson",
-      img: ericssonImg,
-      title: "Ericsson",
-      secondTitle: "Type: Internship/Work",
-      thirdTitle: "Duration: 2023/11 - Present",
-      text: "Program directed towards becoming a fullstack developer. Working in teambased environment with other developers and digital designers to create web applications. Using tech such as SQLite, PHP, Laravel, React, Typescript, Supabase, nextJS, Wordpress and Hydrogen. The program concluded with 6-months of hands on practics at a company within the industry.",
-    },
-  ];
+const infoCards: InfoCardData[] = [
+  {
+    legend: "Yrgo",
+    img: yrgoImg,
+    title: "Yrgo Web Development",
+    secondTitle: "Type: Education",
+    thirdTitle: "Duration: 2022/08 - 2024-06",
+    text: "Program directed towards becoming a fullstack developer. Working in teambased environment with other developers and digital designers to create web applications. Using tech such as SQLite, PHP, Laravel, React, Typescript, Supabase, nextJS, Wordpress and Hydrogen. The program concluded with 6-months of hands on practics at a company within the industry.",
+  },
+  {
+    legend: "Ericsson",
+    img: ericssonImg,
+    title: "Ericsson",
+    secondTitle: "Type: Internship/Work",
+    thirdTitle: "Duration: 2023/11 - Present",
+    text: "Part of Ericsson's STS-automation team, developing web applications for internal use. I've worked with technologies like React, Node.js, TypeScript, MongoDB, MySQL, and Grafana. In addition to extensive coding, I've gained valuable experience in agile practices, holding presentations, and being a collaborative and productive team member.",
+  },
+];
 
+export const Home = () => {
   const renderedInfoCards = infoCards.map((infoCard) => {
     return (
       <>
@@ -352,9 +358,7 @@ export const Home = () => {
         <h1>
           Welcome to my <br /> <span>website!</span>
         </h1>
-        {/* <h2 className="twText">My name is Petter Jakobsson.</h2> */}
         <h2 className="twText">I am a developer based in Gothenburg.</h2>
-        {/* <h3>I am a web developer based in Gothenburgh, Sweden.</h3> */}
       </section>
       <section className="sectionTwo">
         <div className="sliderContainer">
@@ -374,7 +378,13 @@ export const Home = () => {
               use.
             </p>
             <div>
-              <FancyButton></FancyButton>
+              <FancyButton to="/contact" text={"Contact"}></FancyButton>
+              <FancyButton
+                to="https://www.linkedin.com/in/petter-jakobsson-63a009273/"
+                text={"Linked-in →"}></FancyButton>
+              <FancyButton
+                to="https://github.com/jaken92"
+                text={"Github →"}></FancyButton>
             </div>
           </div>
         </StyledSectionThree>
@@ -384,9 +394,15 @@ export const Home = () => {
         </StyledSectionFour>
       </BubbleSection>
       <div className="footer">
-        <a href="">Github</a>
-        <a href="">Linked-in</a>
-        <a href="">Contact</a>
+        <Link to="https://www.linkedin.com/in/petter-jakobsson-63a009273/">
+          Github
+        </Link>
+        <Link to="https://www.linkedin.com/in/petter-jakobsson-63a009273/">
+          Linked-in
+        </Link>
+        <Link to="https://www.linkedin.com/in/petter-jakobsson-63a009273/">
+          Contact
+        </Link>
       </div>
     </StyledMain>
   );

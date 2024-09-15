@@ -2,12 +2,12 @@ import styled, { css } from "styled-components";
 import { InfoCardProps } from "./InfoCard.types";
 
 interface StyledInfoCardProps {
-  wide?: boolean;
+  large?: boolean;
 }
 
 export const StyledInfoCard = styled.div<StyledInfoCardProps>(
-  ({ theme, wide }) => css`
-    width: ${wide ? "46rem" : "22rem"};
+  ({ theme, large }) => css`
+    width: ${large ? "32rem" : "22rem"};
     background-color: ${theme.isDark ? theme.gray : theme.black};
     border-radius: 20px;
     padding: 0.8rem;
@@ -18,7 +18,7 @@ export const StyledInfoCard = styled.div<StyledInfoCardProps>(
     & > fieldset {
       border: 1px solid ${theme.aqua};
       border-radius: 5px;
-      height: 100%;
+      min-height: ${large ? "40rem" : "100%"};
 
       & > legend {
         padding: 0px 6px;
@@ -31,7 +31,7 @@ export const StyledInfoCard = styled.div<StyledInfoCardProps>(
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
         border-radius: 5px;
-        height: ${wide ? "300px" : "160px"};
+        height: ${large ? "300px" : "160px"};
         object-fit: cover;
       }
 
@@ -43,20 +43,29 @@ export const StyledInfoCard = styled.div<StyledInfoCardProps>(
       }
 
       & > p {
-        font-size: 14px;
+        font-size: ${large ? "18px" : "14px"};
+      }
+
+      & > h3 {
+        font-size: ${large ? "24px" : "18px"};
+      }
+
+      & > h4 {
+        font-size: ${large ? "22px" : "16px"};
       }
     }
 
     @media only screen and (min-width: 1750px) {
-      width: ${wide ? "52rem" : "32rem"};
+      width: ${large ? "45rem" : "32rem"};
 
       & > fieldset {
+        min-height: ${large ? "55rem" : "100%"};
         & > legend {
           font-size: 22px;
         }
 
         & > img {
-          height: ${wide ? "400px" : "200px"};
+          height: ${large ? "400px" : "200px"};
         }
 
         & > h3 {
@@ -67,27 +76,39 @@ export const StyledInfoCard = styled.div<StyledInfoCardProps>(
         }
 
         & > p {
-          font-size: 20px;
+          font-size: ${large ? "24px" : "20px"};
         }
       }
     }
 
     @media only screen and (max-width: 750px) {
+      width: 22rem;
       & > fieldset {
+        min-height: ${large ? "490px" : "100%"};
+
         & > img {
+          height: 160px;
         }
 
         & > p {
           font-size: 12px;
+        }
+
+        & > h3 {
+          font-size: 18px;
+        }
+
+        & > h4 {
+          font-size: 16px;
         }
       }
     }
   `
 );
 
-export const InfoCard: React.FC<InfoCardProps> = ({ cardContent, wide }) => {
+export const InfoCard: React.FC<InfoCardProps> = ({ cardContent, large }) => {
   return (
-    <StyledInfoCard wide={wide}>
+    <StyledInfoCard large={large}>
       <fieldset>
         <legend>{cardContent.legend}</legend>
         <img src={cardContent.img} alt={`picture of ${cardContent.title}`} />

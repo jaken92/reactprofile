@@ -1,30 +1,42 @@
-import styled from "styled-components";
+import { Link } from "react-router-dom";
+import styled, { css } from "styled-components";
 
-const StyledFancyButton = styled.button`
-  border: 2px solid ${(props) => props.theme.aqua};
-  font-size: 1rem;
-  background-color: transparent;
-  color: ${(props) => props.theme.aqua};
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 5px 8px;
-  transition: left 2s ease;
+const StyledFancyButton = styled.button<FancyButtonProps>(
+  ({ color, theme }) => css`
+    border: 2px solid ${color ? color : theme.aqua};
+    font-size: 1rem;
+    background-color: transparent;
+    color: ${color ? color : theme.aqua};
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 8px;
+    transition: left 2s ease;
 
-  &:hover {
-    background-color: ${(props) => props.theme.aqua};
-    color: ${(props) => props.theme.black};
-  }
+    &:hover {
+      background-color: ${color ? color : theme.aqua};
+      color: ${color ? color : theme.black};
+    }
+  `
+);
 
-  /* &:focus {
-    box-shadow: 0.5px 0.5px 3px ${(props) => props.theme.aqua};
-    outline: default;
-  } */
-`;
+interface FancyButtonProps {
+  color?: string;
+  text: string;
+  to: string;
+}
 
-export const FancyButton = () => {
+export const FancyButton: React.FC<FancyButtonProps> = ({
+  text,
+  color,
+  to,
+}) => {
   return (
     <>
-      <StyledFancyButton>Contact</StyledFancyButton>
+      <Link to={to}>
+        <StyledFancyButton to={to} color={color} text={text}>
+          {text}
+        </StyledFancyButton>
+      </Link>
     </>
   );
 };

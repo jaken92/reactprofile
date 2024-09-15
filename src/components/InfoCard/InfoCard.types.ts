@@ -9,5 +9,5 @@ export interface InfoCardData {
 
 export interface InfoCardProps {
   cardContent: InfoCardData;
-  wide?: boolean;
+  large?: boolean;
 }

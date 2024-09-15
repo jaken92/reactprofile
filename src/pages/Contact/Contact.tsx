@@ -3,16 +3,17 @@ import { BubbleSection, InfoCard, InfoCardData } from "../../components";
 import pjImg from "../../assets/images/pj2.png";
 
 const StyledContactPage = styled.section`
-  min-height: 100vh;
+  min-height: calc(100vh - 63px); // - header height
+  margin-top: 63px; // headerHeight
   z-index: 4;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0px 2rem;
+  padding: 0rem 2rem;
 `;
 
-const infoCard: InfoCardData = {
+const infoCardData: InfoCardData = {
   legend: "Petter Jakobsson",
   img: pjImg,
   title: "Contact",
@@ -25,7 +26,7 @@ export const Contact = () => {
   return (
     <BubbleSection>
       <StyledContactPage>
-        <InfoCard cardContent={infoCard} wide />
+        <InfoCard cardContent={infoCardData} large />
       </StyledContactPage>
     </BubbleSection>
   );

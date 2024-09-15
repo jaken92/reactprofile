@@ -271,9 +271,9 @@ export const Layout: React.FC<LayoutProps> = ({
             <NavLink onClick={handleLinkClick} to="/">
               HOME
             </NavLink>
-            <NavLink onClick={handleLinkClick} to="/playground">
+            {/* <NavLink onClick={handleLinkClick} to="/playground">
               PLAYGROUND
-            </NavLink>
+            </NavLink> */}
             <NavLink onClick={handleLinkClick} to="/contact">
               CONTACT
             </NavLink>
