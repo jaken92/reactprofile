@@ -197,6 +197,7 @@ const StyledSectionThree = styled.section(
       & > div {
         display: flex;
         gap: 1rem;
+        flex-wrap: wrap;
       }
     }
 
@@ -370,12 +371,15 @@ export const Home = () => {
           <div>
             <h2>My name is Petter Jakobsson.</h2>
             <p>
-              I am a webdeveloper based in Gothenburg, Sweden. I do fullstack
-              development and have a experience with various languages and
-              frameworks. My strongest skillset lies in Javascript and
-              frameworks such as React and NodeJS. Currently working in an
-              automation team at Ericsson, develop web applications for internal
-              use.
+              I'm a full-stack web developer based in Gothenburg, Sweden, with
+              experience across a range of languages and frameworks. My main
+              focus is JavaScript, and I particularly enjoy working with React,
+              TypeScript, and Styled Components. Currently, I’m part of an
+              automation team at Ericsson, where we develop web applications
+              that help streamline workflows and improve productivity.
+              <br />
+              Outside of technology, i love spending time with my girlfriend and
+              my dog, taking walks in the nature and exploring new places.
             </p>
             <div>
               <FancyButton to="/contact" text={"Contact"}></FancyButton>
@@ -394,13 +398,22 @@ export const Home = () => {
         </StyledSectionFour>
       </BubbleSection>
       <div className="footer">
-        <Link to="https://www.linkedin.com/in/petter-jakobsson-63a009273/">
+        <Link
+          target="_blank"
+          rel="noopener noreferrer"
+          to="https://www.linkedin.com/in/petter-jakobsson-63a009273/">
           Github
         </Link>
-        <Link to="https://www.linkedin.com/in/petter-jakobsson-63a009273/">
+        <Link
+          target="_blank"
+          rel="noopener noreferrer"
+          to="https://www.linkedin.com/in/petter-jakobsson-63a009273/">
           Linked-in
         </Link>
-        <Link to="https://www.linkedin.com/in/petter-jakobsson-63a009273/">
+        <Link
+          target="_blank"
+          rel="noopener noreferrer"
+          to="https://www.linkedin.com/in/petter-jakobsson-63a009273/">
           Contact
         </Link>
       </div>

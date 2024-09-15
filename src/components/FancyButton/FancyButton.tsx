@@ -10,11 +10,16 @@ const StyledFancyButton = styled.button<FancyButtonProps>(
     border-radius: 5px;
     cursor: pointer;
     padding: 5px 8px;
-    transition: left 2s ease;
+    transition: 0.3s;
+    flex-shrink: 0;
 
     &:hover {
       background-color: ${color ? color : theme.aqua};
       color: ${color ? color : theme.black};
+    }
+
+    &:active {
+      scale: 0.9;
     }
   `
 );
@@ -32,7 +37,7 @@ export const FancyButton: React.FC<FancyButtonProps> = ({
 }) => {
   return (
     <>
-      <Link to={to}>
+      <Link target="_blank" rel="noopener noreferrer" to={to}>
         <StyledFancyButton to={to} color={color} text={text}>
           {text}
         </StyledFancyButton>
