@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import { FancyButtonProps } from "./FancyButton.types";
+import { StyledFancyButtonProps } from "./FancyButton.types";
 
-export const StyledFancyButton = styled.button<FancyButtonProps>(
+export const StyledFancyButton = styled.button<StyledFancyButtonProps>(
   ({ color, theme }) => css`
     border: 2px solid ${color ? color : theme.accent};
     font-size: 1rem;

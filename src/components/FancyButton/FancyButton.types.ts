@@ -3,3 +3,7 @@ export interface FancyButtonProps {
   text: string;
   to: string;
 }
+
+export interface StyledFancyButtonProps {
+  color?: string;
+}

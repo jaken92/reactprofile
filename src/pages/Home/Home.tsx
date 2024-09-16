@@ -86,7 +86,7 @@ export const Home = () => {
         <Link
           target="_blank"
           rel="noopener noreferrer"
-          to="https://www.linkedin.com/in/petter-jakobsson-63a009273/">
+          to="https://github.com/jaken92">
           Github
         </Link>
         <Link
@@ -95,10 +95,7 @@ export const Home = () => {
           to="https://www.linkedin.com/in/petter-jakobsson-63a009273/">
           Linked-in
         </Link>
-        <Link
-          target="_blank"
-          rel="noopener noreferrer"
-          to="https://www.linkedin.com/in/petter-jakobsson-63a009273/">
+        <Link target="_blank" rel="noopener noreferrer" to="/contact">
           Contact
         </Link>
       </div>

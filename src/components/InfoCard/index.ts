@@ -1,3 +1,3 @@
 export * from "./InfoCard";
-export * from "./InfoCard.styles";
+export { StyledInfoCard } from "./InfoCard.styles";
 export * from "./InfoCard.types";
