@@ -9,6 +9,7 @@ import {
   StyledSectionFour,
   StyledSectionThree,
 } from "./Home.styles";
+import { useTheme } from "styled-components";
 
 const infoCards: InfoCardData[] = [
   {
@@ -30,6 +31,8 @@ const infoCards: InfoCardData[] = [
 ];
 
 export const Home = () => {
+  const theme = useTheme();
+
   const renderedInfoCards = infoCards.map((infoCard) => {
     return (
       <>
@@ -55,16 +58,46 @@ export const Home = () => {
         <StyledSectionThree>
           <div>
             <h2>My name is Petter Jakobsson.</h2>
-            <p>
+            <p style={{ fontWeight: 500 }}>
               I'm a full-stack web developer based in Gothenburg, Sweden, with
               experience across a range of languages and frameworks. My main
-              focus is JavaScript, and I particularly enjoy working with React,
-              TypeScript, and Styled Components. Currently, I’m part of an
-              automation team at Ericsson, where we develop web applications
-              that help streamline workflows and improve productivity.
+              focus is JavaScript, and I particularly enjoy working with
+              <span
+                style={{
+                  color: theme.accent,
+                  fontStyle: "italic",
+                  fontWeight: "800",
+                }}>
+                {" "}
+                React{" "}
+              </span>
+              ,
+              <span
+                style={{
+                  color: theme.accent,
+                  fontStyle: "italic",
+                  fontWeight: "800",
+                }}>
+                TypeScript{" "}
+              </span>{" "}
+              and
+              <span
+                style={{
+                  color: theme.accent,
+                  fontStyle: "italic",
+                  fontWeight: "800",
+                }}>
+                {" "}
+                Styled Components
+              </span>
+              . Currently, I’m part of an automation team at Ericsson, where we
+              develop web applications that help streamline workflows and
+              improve productivity.
               <br />
-              Outside of technology, i like to spend time with my girlfriend and
-              my dog, taking walks in the nature and exploring new places.
+              <span style={{ display: "block", marginTop: "12px" }}>
+                Outside of technology, i like to spend time with my girlfriend
+                and my dog, taking walks in the nature and exploring new places.
+              </span>
             </p>
             <div>
               <FancyButton to="/contact" text={"Contact"}></FancyButton>

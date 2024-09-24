@@ -11,7 +11,7 @@ const StyledBubbleSection = styled.section`
     z-index: 200 !important;
   }
 
-  @keyframes pulsate {
+  /* @keyframes pulsate {
     0%,
     100% {
       transform: scale(1);
@@ -23,6 +23,18 @@ const StyledBubbleSection = styled.section`
       transform: scale(1.2);
     }
     7% {
+      transform: scale(1);
+    }
+  } */
+
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
       transform: scale(1);
     }
   }
@@ -57,14 +69,14 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
       color: theme.accent,
       insetX: 5,
       insetY: 84,
-      opacity: 0.6,
+      opacity: 0.4,
     },
     {
       size: 7,
       color: theme.accent,
       insetX: 2,
       insetY: 78,
-      opacity: 0.6,
+      opacity: 0.7,
     },
     {
       size: 12,
@@ -85,21 +97,21 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
       color: theme.accent,
       insetX: -4,
       insetY: 11,
-      opacity: 1,
-    },
-    {
-      size: 15,
-      color: theme.accent,
-      insetX: 11,
-      insetY: 10,
-      opacity: 0.7,
-    },
-    {
-      size: 16,
-      color: theme.accent, //2nd
-      insetX: 3,
-      insetY: 15,
       opacity: 0.5,
+    },
+    // {
+    //   size: 15,
+    //   color: theme.accent,
+    //   insetX: 11,
+    //   insetY: 10,
+    //   opacity: 0.7,
+    // },
+    {
+      size: 6,
+      color: theme.accent, //2nd
+      insetX: 4,
+      insetY: 12,
+      opacity: 0.8,
     },
     {
       size: 18,
@@ -151,7 +163,7 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
     sideY: "top" | "bottom"
   ): JSX.Element[] => {
     const renderedBubbles = bubbles.map((bubble) => {
-      const animationDelay = Math.floor(Math.random() * 11);
+      const animationDelay = Math.floor(Math.random() * 6);
 
       const styling: React.CSSProperties = {
         height:
@@ -162,7 +174,7 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
         backgroundColor: theme.isDark ? "transparent" : bubble.color,
         borderRadius: "50%",
         opacity: theme.isDark ? "1" : bubble.opacity,
-        animation: `pulsate 10s ease-in-out ${animationDelay}s infinite`,
+        animation: `pulsate 6s ease-in-out ${animationDelay}s infinite`,
         border: theme.isDark ? `2px solid ${theme.accent}` : "none",
         // zIndex: "1",
       };
