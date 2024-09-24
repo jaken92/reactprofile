@@ -69,7 +69,7 @@ export const Home = () => {
                   fontWeight: "800",
                 }}>
                 {" "}
-                React{" "}
+                React
               </span>
               ,
               <span
@@ -78,6 +78,7 @@ export const Home = () => {
                   fontStyle: "italic",
                   fontWeight: "800",
                 }}>
+                {" "}
                 TypeScript{" "}
               </span>{" "}
               and
