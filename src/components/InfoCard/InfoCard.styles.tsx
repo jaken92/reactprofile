@@ -7,6 +7,7 @@ export const StyledInfoCard = styled.div<StyledInfoCardProps>(
     background-color: ${theme.isDark ? theme.secondary : theme.primary};
     border-radius: 20px;
     padding: 0.8rem;
+    padding-top: 5px; //TODO: replace magic number to compensate fieldset legend.
     box-shadow: ${theme.isDark
       ? "none"
       : "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"};
