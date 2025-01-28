@@ -6,10 +6,11 @@ import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
 import { Playground } from "./pages/Playground/Playground";
 import { Contact } from "./pages";
-
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 type ThemeColor = "light" | "dark";
 
 function App() {
+  const queryClient = new QueryClient();
   const [theme, setTheme] = useState<ThemeColor>("light");
 
   useEffect(() => {
@@ -28,15 +29,17 @@ function App() {
   console.log(typeof theme);
   return (
     <>
-      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-        <Layout themeSwitch={toggleTheme} theme={theme}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/playground" element={<Playground />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </Layout>
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+          <Layout themeSwitch={toggleTheme} theme={theme}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/playground" element={<Playground />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </Layout>
+        </ThemeProvider>
+      </QueryClientProvider>
     </>
   );
 }

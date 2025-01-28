@@ -11,8 +11,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.65.1",
+    "axios": "^1.7.9",
+    "final-form": "^4.20.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-final-form": "^6.5.9",
     "react-router-dom": "^6.26.1",
     "styled-components": "^6.1.12"
   },
