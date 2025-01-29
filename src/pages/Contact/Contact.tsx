@@ -116,7 +116,7 @@ export const Contact = () => {
                 form,
                 submitting,
                 pristine,
-                values,
+                // values,
               }) => (
                 <form onSubmit={handleSubmit}>
                   <div>
