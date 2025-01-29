@@ -19,7 +19,7 @@ import { useMutation } from "@tanstack/react-query";
 
 // Define the type for the mutation function
 type PostMailFunction = (mailData: {
-  mailaddress: string;
+  email: string;
   subject: string;
   message: string;
   firstName: string;

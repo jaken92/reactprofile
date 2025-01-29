@@ -74,36 +74,49 @@ const StyledContactForm = styled.section(
   `
 );
 
+interface ContactFormData {
+  email: string;
+  subject: string;
+  message: string;
+  firstName: string;
+  lastName: string;
+}
+
 export const Contact = () => {
   const mutation = usePostMail();
 
-  const onSubmit = async (values: any) => {
+  const onSubmit = async (values: ContactFormData) => {
     console.log(values);
     mutation.mutate({
-      mailaddress: "sadasd@gmail.com",
-      subject: "Test Format",
-      message: "Example of a message... lalala.. ok. bye.",
-      firstName: "Petter",
-      lastName: "Jakobsson",
+      email: values.email,
+      subject: values.subject,
+      message: values.message,
+      firstName: values.firstName,
+      lastName: values.lastName,
     });
   };
 
   return (
     <BubbleSection>
       <StyledContactPage>
-        {/* <InfoCard cardContent={infoCardData} large /> */}
         <StyledContactForm>
           <fieldset>
             <legend>Contact</legend>
             <Form
               onSubmit={onSubmit}
-              // initialValues={{ name: "petter"}}
+              // initialValues={{
+              //   firstName: "",
+              //   lastName: "",
+              //   email: "",
+              //   subject: "",
+              //   message: "",
+              // }}
               render={({
                 handleSubmit,
                 form,
                 submitting,
                 pristine,
-                // values,
+                values,
               }) => (
                 <form onSubmit={handleSubmit}>
                   <div>
@@ -135,6 +148,15 @@ export const Contact = () => {
                   </div>
                   <div>
                     <Field
+                      name="subject"
+                      component={TextInput}
+                      label="Subject"
+                      placeholder="Subject"
+                      type="text"
+                    />
+                  </div>
+                  <div>
+                    <Field
                       name="message"
                       component={TextInput}
                       label="Message"
@@ -152,7 +174,7 @@ export const Contact = () => {
                     </button>
                     <button
                       type="button"
-                      onClick={form.reset}
+                      onClick={() => form.reset()}
                       disabled={submitting || pristine}>
                       Reset
                     </button>
