@@ -82,7 +82,7 @@ export const Contact = () => {
     mutation.mutate({
       mailaddress: "sadasd",
       subject: "val.test",
-      message: "okok",
+      message: "redeploy",
     });
   };
 
