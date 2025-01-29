@@ -78,7 +78,7 @@ export const Contact = () => {
   const mutation = usePostMail();
 
   const onSubmit = async (values: any) => {
-    console.log("values");
+    console.log(values);
     mutation.mutate({
       mailaddress: "sadasd",
       subject: "val.test",
