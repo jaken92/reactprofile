@@ -22,6 +22,8 @@ type PostMailFunction = (mailData: {
   mailaddress: string;
   subject: string;
   message: string;
+  firstName: string;
+  lastName: string;
 }) => Promise<any>;
 
 export const postMail: PostMailFunction = async (mailData) => {

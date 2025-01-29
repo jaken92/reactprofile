@@ -80,9 +80,11 @@ export const Contact = () => {
   const onSubmit = async (values: any) => {
     console.log(values);
     mutation.mutate({
-      mailaddress: "sadasd",
-      subject: "val.test",
-      message: "redeploy",
+      mailaddress: "sadasd@gmail.com",
+      subject: "Test Format",
+      message: "Example of a message... lalala.. ok. bye.",
+      firstName: "Petter",
+      lastName: "Jakobsson",
     });
   };
 
