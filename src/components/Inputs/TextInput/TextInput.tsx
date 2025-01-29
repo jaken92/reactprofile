@@ -11,7 +11,7 @@ interface StyledTextInputProps {
 }
 
 const StyledTextInput = styled.div<StyledTextInputProps>(
-  ({ theme, showError }) => css`
+  ({ showError }) => css`
     display: flex;
     flex-direction: column;
     align-items: baseline;

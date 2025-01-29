@@ -1,5 +1,4 @@
-import { BubbleSection, InfoCard, InfoCardData } from "../../components";
-import pjImg from "../../assets/images/pj2.png";
+import { BubbleSection } from "../../components";
 import { StyledContactPage } from "./Contact.styles";
 import styled, { css } from "styled-components";
 import { Field, Form } from "react-final-form";
@@ -79,6 +78,7 @@ export const Contact = () => {
   const mutation = usePostMail();
 
   const onSubmit = async (values: any) => {
+    console.log("values");
     mutation.mutate({
       mailaddress: "sadasd",
       subject: "val.test",
@@ -101,7 +101,7 @@ export const Contact = () => {
                 form,
                 submitting,
                 pristine,
-                values,
+                // values,
               }) => (
                 <form onSubmit={handleSubmit}>
                   <div>
