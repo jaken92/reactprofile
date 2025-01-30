@@ -1,153 +1,36 @@
 import { BubbleSection } from "../../components";
-import { StyledContactPage } from "./Contact.styles";
-import styled, { css } from "styled-components";
+import { StyledContactForm, StyledContactPage } from "./Contact.styles";
 import { Field, Form } from "react-final-form";
 import { TextInput } from "../../components/Inputs/TextInput";
 import { usePostMail } from "../../hooks/mutations";
 import { useTheme } from "styled-components";
-
-//validators
-
-const required = (value: any) => (value ? undefined : "Required");
-
-const noNumbers = (value: any) =>
-  !/\d/.test(value) ? undefined : "Numbers not allowed in field";
-
-const noSpecialChars = (value: any) => {
-  const specCharRegex = /[^a-zA-Z0-9\s]/;
-
-  return specCharRegex.test(value)
-    ? "Special chararcters not allowed in field"
-    : undefined;
-};
-
-const isValidEmail = (value: any) => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(value) ? undefined : "Enter a valid email address";
-};
-
-const noHtmlTags = (value: any) => {
-  const htmlRegex = /<(script|iframe)[^>]*>|<[^>]*>|<|\s*>|<\/\s*>/;
-
-  return htmlRegex.test(value) ? "Html characters not allowed." : undefined;
-};
-
-const composeValidators =
-  (...validators: any[]) =>
-  (value: any) =>
-    validators.reduce(
-      (error, validator) => error || validator(value),
-      undefined
-    );
-
-const StyledContactForm = styled.section(
-  ({ theme }) => css`
-    margin-top: 8rem;
-    margin-bottom: 8rem;
-    background-color: ${theme.isDark ? theme.secondary : theme.primary};
-    width: 60vw;
-    border-radius: 20px;
-    padding: 0.8rem;
-    padding-top: 5px; //TODO: replace magic number to compensate fieldset legend.
-    box-shadow: ${theme.isDark
-      ? "none"
-      : "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"};
-
-    & > fieldset {
-      border: 1px solid ${theme.accent};
-      border-radius: 5px;
-      width: 100%;
-      padding: 20px;
-
-      & > legend {
-        padding: 0px 6px;
-        color: ${theme.accent};
-        text-transform: uppercase;
-      }
-
-      & form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: baseline;
-        margin: 0 auto;
-        width: 100%;
-        overflow-x: none;
-
-        & > div {
-          width: 100%;
-          margin-bottom: 1rem;
-
-          & button {
-            border: 2px solid ${theme.accent};
-            font-size: 1rem;
-            background-color: transparent;
-            color: ${theme.accent};
-            border-radius: 5px;
-            cursor: pointer;
-            padding: 5px 8px;
-            transition: 0.3s;
-            flex-shrink: 0;
-            margin: 0 0.5rem 0 0;
-
-            & > .spinner {
-              height: 15px;
-              animation: spin 1s linear infinite;
-              margin-inline: 8px;
-            }
-
-            &:hover {
-              background-color: ${theme.accent};
-              color: ${theme.primary};
-            }
-
-            &:active {
-              scale: 0.9;
-            }
-
-            @media only screen and (min-width: 1750px) {
-              font-size: 24px;
-            }
-          }
-        }
-      }
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  `
-);
-
-interface ContactFormData {
-  email: string;
-  subject: string;
-  message: string;
-  firstName: string;
-  lastName: string;
-}
+import {
+  composeValidators,
+  isValidEmail,
+  noHtmlTags,
+  noNumbers,
+  noSpecialChars,
+  required,
+} from "../../functions/validators";
+// import { useForm } from "react-final-form";
+import { ContactFormData } from "./Contact.types";
 
 export const Contact = () => {
   const mutation = usePostMail();
+  // const contactForm = useForm();
 
   const theme = useTheme();
 
-  console.log("Current theme: ", theme.accent);
-
-  const onSubmit = async (values: ContactFormData) => {
-    console.log(values);
-    mutation.mutate({
+  const onSubmit = async (values: ContactFormData, form: any) => {
+    await mutation.mutateAsync({
       email: values.email,
       subject: values.subject,
       message: values.message,
       firstName: values.firstName,
       lastName: values.lastName,
     });
+
+    form.reset();
   };
 
   return (
@@ -158,20 +41,7 @@ export const Contact = () => {
             <legend>Contact</legend>
             <Form
               onSubmit={onSubmit}
-              // initialValues={{
-              //   firstName: "",
-              //   lastName: "",
-              //   email: "",
-              //   subject: "",
-              //   message: "",
-              // }}
-              render={({
-                handleSubmit,
-                form,
-                submitting,
-                pristine,
-                // values,
-              }) => (
+              render={({ handleSubmit, form, submitting, pristine }) => (
                 <form onSubmit={handleSubmit}>
                   <div>
                     <Field
@@ -234,10 +104,7 @@ export const Contact = () => {
                   </div>
 
                   <div className="buttons">
-                    <button
-                      // onClick={onSubmit}
-                      type="submit"
-                      disabled={submitting || pristine}>
+                    <button type="submit" disabled={submitting || pristine}>
                       {mutation.isPending ? (
                         <svg
                           className="spinner"
@@ -293,7 +160,6 @@ export const Contact = () => {
                       Reset
                     </button>
                   </div>
-                  {/* <pre>{JSON.stringify(values)}</pre> */}
                 </form>
               )}
             />

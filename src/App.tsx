@@ -26,7 +26,6 @@ function App() {
     localStorage.setItem("theme", changeTheme);
   };
 
-  console.log(typeof theme);
   return (
     <>
       <QueryClientProvider client={queryClient}>
