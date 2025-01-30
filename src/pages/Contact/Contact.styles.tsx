@@ -14,7 +14,7 @@ export const StyledContactForm = styled.section(
   ({ theme }) => css`
     margin: auto auto;
     background-color: ${theme.isDark ? theme.secondary : theme.primary};
-    width: 40vw;
+    width: 32rem;
     border-radius: 20px;
     padding: 0.8rem;
     padding-top: 5px; //TODO: replace magic number to compensate fieldset legend.
@@ -96,13 +96,13 @@ export const StyledContactForm = styled.section(
             &:active {
               scale: 0.9;
             }
-
-            @media only screen and (min-width: 1750px) {
-              font-size: 24px;
-            }
           }
         }
       }
+    }
+
+    @media only screen and (max-width: 750px) {
+      width: 22rem;
     }
 
     @keyframes spin {
