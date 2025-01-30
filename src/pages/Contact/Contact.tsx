@@ -13,15 +13,11 @@ import {
   required,
 } from "../../functions/validators";
 import { ContactFormData } from "./Contact.types";
-import { useState } from "react";
 
 export const Contact = () => {
   const mutation = usePostMail();
-  const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const theme = useTheme();
-
-  console.log(hasSubmitted);
 
   const onSubmit = async (values: ContactFormData, form: any) => {
     await mutation.mutateAsync({
@@ -34,7 +30,6 @@ export const Contact = () => {
 
     if (mutation.isSuccess) {
       form.reset();
-      setHasSubmitted(true);
     }
   };
 
@@ -45,13 +40,14 @@ export const Contact = () => {
           <fieldset>
             <legend>Contact</legend>
 
-            <div className={`thankYouBox ${hasSubmitted ? "visible" : ""}`}>
+            <div
+              className={`thankYouBox ${mutation.isSuccess ? "visible" : ""}`}>
               <h2>Your message has been sent!</h2>
               <p>
                 Thank you for contacting me, I will get back to you shortly!
               </p>
             </div>
-            <div className={`${hasSubmitted ? "hidden" : ""}`}>
+            <div className={`${mutation.isSuccess ? "hidden" : ""}`}>
               <Form
                 onSubmit={onSubmit}
                 render={({ handleSubmit, form, submitting, pristine }) => (
