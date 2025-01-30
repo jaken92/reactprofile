@@ -8,15 +8,6 @@ export const StyledContactPage = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* & > .thankYouBox {
-    background-color: hotpink;
-    height: 200px;
-    width: 200px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-  } */
 `;
 
 export const StyledContactForm = styled.section(
@@ -51,7 +42,7 @@ export const StyledContactForm = styled.section(
         align-items: center;
         text-align: center;
         color: ${theme.primary};
-        transition: color 2s ease;
+        transition: color 3s ease;
         visibility: hidden;
       }
 

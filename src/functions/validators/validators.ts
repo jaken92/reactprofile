@@ -5,11 +5,19 @@ export const required = (value: any) => (value ? undefined : "Required");
 export const noNumbers = (value: any) =>
   !/\d/.test(value) ? undefined : "Numbers not allowed in field";
 
+// export const noSpecialChars = (value: any) => {
+//   const specCharRegex = /[^a-zA-Z0-9\s]/;
+
+//   return specCharRegex.test(value)
+//     ? "Special chararcters not allowed in field"
+//     : undefined;
+// };
+
 export const noSpecialChars = (value: any) => {
-  const specCharRegex = /[^a-zA-Z0-9\s]/;
+  const specCharRegex = /[^a-zA-Z0-9åäöÅÄÖ\s]/; // Allow å, ä, ö
 
   return specCharRegex.test(value)
-    ? "Special chararcters not allowed in field"
+    ? "Special characters not allowed in field"
     : undefined;
 };
 
