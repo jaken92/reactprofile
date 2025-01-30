@@ -2,21 +2,28 @@ import styled, { css } from "styled-components";
 
 export const StyledContactPage = styled.section`
   min-height: calc(100vh - 63px); // - header height
-  margin-top: 63px; // headerHeight
+  margin-top: 63px; // headerHeightk
   z-index: 4;
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 0rem 2rem;
+  align-items: center;
+
+  /* & > .thankYouBox {
+    background-color: hotpink;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  } */
 `;
 
 export const StyledContactForm = styled.section(
   ({ theme }) => css`
-    margin-top: 8rem;
-    margin-bottom: 8rem;
+    margin: auto auto;
     background-color: ${theme.isDark ? theme.secondary : theme.primary};
-    width: 60vw;
+    width: 40vw;
     border-radius: 20px;
     padding: 0.8rem;
     padding-top: 5px; //TODO: replace magic number to compensate fieldset legend.
@@ -34,6 +41,29 @@ export const StyledContactForm = styled.section(
         padding: 0px 6px;
         color: ${theme.accent};
         text-transform: uppercase;
+      }
+
+      & .thankYouBox {
+        height: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: ${theme.primary};
+        transition: color 2s ease;
+        visibility: hidden;
+      }
+
+      & .visible {
+        color: ${theme.accent};
+        visibility: visible;
+        height: 70dvh;
+      }
+
+      & .hidden {
+        visibility: hidden;
+        height: 0px;
       }
 
       & form {

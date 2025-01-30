@@ -36,7 +36,11 @@ export const StyledTextInput = styled.div<StyledTextInputProps>(
       border-radius: 4px;
       font-size: 14px;
       width: 100%;
-      resize: vertical;
+      resize: none;
+    }
+
+    & > textarea {
+      height: 10rem;
     }
 
     & > input:focus,
