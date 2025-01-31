@@ -1,6 +1,8 @@
 import { BubbleSection } from "../../components/BubbleSection";
 import yrgoImg from "../../assets/images/yrgo2.png";
 import ericssonImg from "../../assets/images/ericsson2.png";
+import ecImg from "../../assets/images/distansstudier.jpg.webp";
+import laptop from "../../assets/images/laptop.jpeg";
 import { FancyButton } from "../../components/FancyButton";
 import { InfoCard, InfoCardData } from "../../components/InfoCard";
 import { Link } from "react-router-dom";
@@ -25,8 +27,24 @@ const infoCards: InfoCardData[] = [
     img: ericssonImg,
     title: "Ericsson",
     secondTitle: "Type: Internship/Work",
-    thirdTitle: "Duration: 2023/11 - Present",
-    text: "Part of Ericsson's STS-automation team, developing web applications for internal use. I've worked with technologies like React, Node.js, TypeScript, MongoDB, MySQL, and Grafana. In addition to extensive coding, I've gained valuable experience in agile practices, holding presentations, and being a collaborative and productive team member.",
+    thirdTitle: "Duration: 2023/11 - 2024/10",
+    text: "Part of Ericsson's STS-automation team, developing web applications that help streamline workflows and improve productivity. I've worked with technologies like React, Node.js, TypeScript, MongoDB, MySQL, and Grafana. In addition to extensive coding, I've gained valuable experience in agile practices, holding presentations, and being a collaborative and productive team member.",
+  },
+  {
+    legend: "Ec-Utbildning",
+    img: ecImg,
+    title: "Digital Availability",
+    secondTitle: "Type: Studies",
+    thirdTitle: "Duration: 2024/10 - 2024-12",
+    text: "Remote course in digital availability - We learn what makes our webpages and apps accessible and how to achieve a better UX for everyone. Reading up on the WCAG guidelines and applying this knowledge to our own projects. ",
+  },
+  {
+    legend: "Ec-utbildning",
+    img: laptop,
+    title: "Testing Techniques",
+    secondTitle: "Type: Studies",
+    thirdTitle: "Duration: 2024/11 - 2025/02",
+    text: "Remote course in testing - Studying various test techniques and learning about testing at different levels. Trying out Java-based testing and using techs such as JUnit, Selenium and cucumber. This course has given me a solid understanding of the principals of testing that will be applicable regardless of language. ",
   },
 ];
 
@@ -91,9 +109,8 @@ export const Home = () => {
                 {" "}
                 Styled Components
               </span>
-              . Currently, I’m part of an automation team at Ericsson, where we
-              develop web applications that help streamline workflows and
-              improve productivity.
+              . Currently, I´m on the lookout for new opportunities! I am open
+              to remote roles and positions based in Gotheburg or Stockholm.
               <br />
               <span style={{ display: "block", marginTop: "12px" }}>
                 Outside of technology, i like to spend time with my girlfriend

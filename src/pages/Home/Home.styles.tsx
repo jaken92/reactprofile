@@ -209,6 +209,9 @@ export const StyledSectionThree = styled.section(
 export const StyledSectionFour = styled.section(
   ({ theme }) => css`
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     & > h2 {
       z-index: 4;
@@ -224,12 +227,10 @@ export const StyledSectionFour = styled.section(
     }
 
     & > .experiencesContainer {
-      margin: 3rem auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6rem;
-      padding: 0rem 2rem;
+      margin: 4rem auto;
+      display: grid;
+      grid-template-columns: repeat(2, min-content);
+      grid-gap: 4rem;
 
       & > .experienceCard {
         width: 22rem;
@@ -275,7 +276,9 @@ export const StyledSectionFour = styled.section(
 
     @media only screen and (max-width: 750px) {
       & > .experiencesContainer {
-        gap: 3rem;
+        grid-gap: 3rem;
+        margin: 3rem auto;
+        grid-template-columns: min-content;
 
         & > .experienceCard {
           & > fieldset {
@@ -293,7 +296,8 @@ export const StyledSectionFour = styled.section(
 
     @media only screen and (min-width: 1750px) {
       & > .experiencesContainer {
-        gap: 8rem;
+        grid-gap: 8rem;
+        margin: 8rem auto;
 
         & > .experienceCard {
           width: 32rem;
