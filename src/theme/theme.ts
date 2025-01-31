@@ -5,7 +5,8 @@ export const lightTheme: DefaultTheme = {
   text: "#544d43", // darkbrown
   accent: "hsla(80, 45%, 29%, 1)", // green
   secondary: "hsla(80, 45%, 29%, 1)", // green
-  hover: "hsl(213, 14%, 53%, 1)",
+  // hover: "hsl(213, 14%, 53%, 1)",
+  hover: "#7a7866",
   isDark: false,
 };
 

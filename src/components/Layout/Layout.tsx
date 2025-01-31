@@ -9,15 +9,15 @@ export const Layout: React.FC<LayoutProps> = ({
   themeSwitch,
   theme,
 }) => {
-  const [isActive, setIsActive] = useState(false);
+  const [isHamburgerActive, setIsHamburgerActive] = useState(false);
 
   const handleHamburgerClick = () => {
-    setIsActive(!isActive);
+    setIsHamburgerActive(!isHamburgerActive);
   };
 
   const handleLinkClick = () => {
     window.scrollTo(0, 0);
-    setIsActive(false);
+    setIsHamburgerActive(false);
   };
 
   return (
@@ -28,7 +28,7 @@ export const Layout: React.FC<LayoutProps> = ({
         </NavLink>
         <nav>
           <ThemeToggler theme={theme} themeSwitch={themeSwitch} />
-          <div className={`navMenu ${isActive ? "active" : ""}`}>
+          <div className={`navMenu ${isHamburgerActive ? "active" : ""}`}>
             <NavLink onClick={handleLinkClick} to="/">
               HOME
             </NavLink>
@@ -42,7 +42,7 @@ export const Layout: React.FC<LayoutProps> = ({
 
           <div
             onClick={handleHamburgerClick}
-            className={`hamburger ${isActive ? "active" : ""}`}>
+            className={`hamburger ${isHamburgerActive ? "active" : ""}`}>
             <span> </span>
           </div>
         </nav>
