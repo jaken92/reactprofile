@@ -19,7 +19,7 @@ const infoCards: InfoCardData[] = [
     img: yrgoImg,
     title: "Yrgo Web Development",
     secondTitle: "Type: Education",
-    thirdTitle: "Duration: 2022/08 - 2024-06",
+    thirdTitle: "Duration: 2022-08 - 2024-06",
     text: "Program directed towards becoming a fullstack developer. Working in teambased environment with other developers and digital designers to create web applications. Using tech such as SQLite, PHP, Laravel, React, Typescript, Supabase, nextJS, Wordpress and Hydrogen. The program concluded with 6-months of hands on practics at a company within the industry.",
   },
   {
@@ -27,7 +27,7 @@ const infoCards: InfoCardData[] = [
     img: ericssonImg,
     title: "Ericsson",
     secondTitle: "Type: Internship/Work",
-    thirdTitle: "Duration: 2023/11 - 2024/10",
+    thirdTitle: "Duration: 2023-11 - 2024-10",
     text: "Part of Ericsson's STS-automation team, developing web applications that help streamline workflows and improve productivity. I've worked with technologies like React, Node.js, TypeScript, MongoDB, MySQL, and Grafana. In addition to extensive coding, I've gained valuable experience in agile practices, holding presentations, and being a collaborative and productive team member.",
   },
   {
@@ -35,7 +35,7 @@ const infoCards: InfoCardData[] = [
     img: ecImg,
     title: "Digital Availability",
     secondTitle: "Type: Studies",
-    thirdTitle: "Duration: 2024/10 - 2024-12",
+    thirdTitle: "Duration: 2024-10 - 2024-12",
     text: "Remote course in digital availability - We learn what makes our webpages and apps accessible and how to achieve a better UX for everyone. Reading up on the WCAG guidelines and applying this knowledge to our own projects. ",
   },
   {
@@ -43,7 +43,7 @@ const infoCards: InfoCardData[] = [
     img: laptop,
     title: "Testing Techniques",
     secondTitle: "Type: Studies",
-    thirdTitle: "Duration: 2024/11 - 2025/02",
+    thirdTitle: "Duration: 2024-11 - 2025-02",
     text: "Remote course in testing - Studying various test techniques and learning about testing at different levels. Trying out Java-based testing and using techs such as JUnit, Selenium and cucumber. This course has given me a solid understanding of the principals of testing that will be applicable regardless of language. ",
   },
 ];
