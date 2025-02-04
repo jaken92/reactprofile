@@ -3,10 +3,9 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./theme/theme";
 import { Layout } from "./components/Layout/Layout";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./pages/Home/Home";
-import { Playground } from "./pages/Playground/Playground";
-import { Contact } from "./pages";
+import { Contact, Projects, Home } from "./pages";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 type ThemeColor = "light" | "dark";
 
 function App() {
@@ -33,7 +32,8 @@ function App() {
           <Layout themeSwitch={toggleTheme} theme={theme}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/playground" element={<Playground />} />
+              <Route path="/projects" element={<Projects />} />
+              {/* <Route path="/playground" element={<Playground />} /> */}
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </Layout>

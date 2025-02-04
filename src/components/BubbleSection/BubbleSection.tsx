@@ -162,7 +162,7 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
     sideX: "left" | "right",
     sideY: "top" | "bottom"
   ): JSX.Element[] => {
-    const renderedBubbles = bubbles.map((bubble) => {
+    const renderedBubbles = bubbles.map((bubble, i) => {
       const animationDelay = Math.floor(Math.random() * 6);
 
       const styling: React.CSSProperties = {
@@ -184,7 +184,7 @@ export const BubbleSection: React.FC<BubbleSectionProps> = ({ children }) => {
       styling[sideY] =
         (windowWidth > 850 ? bubble.insetY : bubble.insetY * 0.5) + "rem";
 
-      return <div style={styling}></div>;
+      return <div key={i} style={styling}></div>;
     });
 
     return renderedBubbles;

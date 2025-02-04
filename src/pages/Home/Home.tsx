@@ -51,10 +51,10 @@ const infoCards: InfoCardData[] = [
 export const Home = () => {
   const theme = useTheme();
 
-  const renderedInfoCards = infoCards.map((infoCard) => {
+  const renderedInfoCards = infoCards.map((infoCard, i) => {
     return (
       <>
-        <InfoCard cardContent={infoCard} />
+        <InfoCard key={i} cardContent={infoCard} />
       </>
     );
   });
